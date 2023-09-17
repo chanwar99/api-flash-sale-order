@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ use App\Http\Controllers\ProductController;
 
 // Rute-rute untuk ProductController
 Route::resource('products', ProductController::class);
+
+// Rute untuk menambah produk ke order
+Route::post('orders/add-product', [OrderController::class, 'addProductToOrder']);
