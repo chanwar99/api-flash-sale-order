@@ -7,6 +7,12 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $products = Product::all();
+        return response()->json($products);
+    }
+
     // Create a new product
     public function store(Request $request)
     {
