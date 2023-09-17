@@ -24,5 +24,8 @@ use App\Http\Controllers\OrderController;
 // Rute-rute untuk ProductController
 Route::resource('products', ProductController::class);
 
+// Rute-rute untuk OrderController
+Route::resource('orders', OrderController::class);
+
 // Rute untuk menambah produk ke order
 Route::post('orders/add-product', [OrderController::class, 'addProductToOrder']);

@@ -9,6 +9,12 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        $orders = Order::with('product')->get();
+        return response()->json($orders);
+    }
+
     public function addProductToOrder(Request $request)
     {
         // Validasi input
